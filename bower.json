@@ -1,0 +1,21 @@
+{
+  "name": "lindsayruddock2",
+  "version": "0.1",
+  "authors": [
+    "Tom Chambers <tom.chambers@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fittext": "*",
+    "jquery": "~2.1.1"
+  }
+}
