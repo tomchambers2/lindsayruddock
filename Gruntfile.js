@@ -30,7 +30,7 @@ module.exports = function(grunt) {
           dot: true,
           cwd: 'app',
           dest: 'dist',
-          src: ['*']
+          src: ['**','!*.html','!partials/**']
         }]
       }
     },
@@ -40,6 +40,16 @@ module.exports = function(grunt) {
       },
       src: ['**']
     },
+    includereplace: {
+      main: {
+        expand: true,
+        dot: true,
+        cwd: 'app',
+        dest: 'dist',
+        src: ['*.html']
+      }
+    },
+    clean: ['dist/**']
   });
 
   //load in all the modules
@@ -47,11 +57,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-gh-pages');  
+  grunt.loadNpmTasks('grunt-include-replace');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   //register tasks
   grunt.registerTask('default', ['jshint']);
 
-  grunt.registerTask('build', []);
+  grunt.registerTask('build', ['clean','includereplace','copy']);
 
   grunt.registerTask('serve', ['watch']);
 };
