@@ -15,6 +15,11 @@ body {
 .content {
 	min-height: 95%;
 }
+
+.address {
+	margin-left: 30px;
+}
+
 footer {
 	height: 5%;
 }
@@ -23,16 +28,27 @@ a {
 	color: #000;
 }
 
-h1 {
+.title h1 {
 	font-weight: 400;
 	font-size: 3em;
 	margin: 0;
 	margin-bottom: 0.25em;
 }
-h2 {
+.title h2 {
 	margin: 0;
 	font-weight: 300;
 	font-size: 1.2em;
+}
+
+h2 {
+	margin-top: 2em;
+}
+h3 {
+	margin-top: 2.5em;
+}
+
+td {
+	padding-right: 40px;
 }
 
 nav {
@@ -123,6 +139,10 @@ article {
 	box-shadow: 8px 8px 0px #A2A2A2, 16px 16px 0px #686868;
 	border-right: 1px solid #A2A2A2;
 	border-bottom: 1px solid #A2A2A2;
+}
+
+article img {
+	max-width: 100%;
 }
 
 footer {

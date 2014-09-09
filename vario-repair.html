@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lindsay Ruddock</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>	
+	<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+	<div class="content">
+		<nav>
+			<ul>
+				<a href="./"><li>About</li></a>
+				<a href="./cv.html"><li>CV</li></a>
+				<a href="./vario-history.html"><li>Vario history</li></a>
+				<a href="./vario-repair.html"><li>Vario repair</li></a>
+			</ul>
+		</nav>
+
+		<div class="main">
+			<header>
+				<div class="portrait"></div>
+				<div class="title">
+					<h1>Lindsay Ruddock</h1>
+					<h2>Electrical engineer and inventor of the LR vario series</h2>
+				</div>
+			</header>
+			<article>
+
+<h1>Vario repair</h1>
+
+<h2><a href="./vario-repair.html">Overview</a> | <a href="./circuits.html">Circuits</a> | <a href="./layouts.html">Layouts</a> | <a href="./dismantling.html">Dismantling</a></h2>
+
+<h3>A brief description of the circuits used</h3>
+<p>The instrument measures atmospheric pressure, converts the pressure signal to altitude which is displayed digitally. The LR3 is an analog alti-vario, that is all signal processing is analog even though some displays are digital. Conversion of the analog altimeter and mb signals to digital is purely for readability of the displayed values.</p>
+<p>There are two PCBs, the Main Card which has the bulk of the circuitry, and the Display Card which has the low battery detection as well as all the a/d converters and their references for the digital displays.</p>
+
+<h3>Main Card:</h3>
+<ul>
+	<li>Battery supply linear regulator and supply splitter</li>
+	<li>Pressure sensor constant current excitation</li>
+	<li>Pressure sensor bridge and amplifier</li>
+	<li>Lineariser</li>
+	<li>Differentiator</li>
+	<li>Vario amplifier</li>
+	<li>Audio circuit</li>
+	<li>Display Card:</li>
+	<li>Altimeter A/D and LCD</li>
+	<li>Averager A/D and LCD</li>
+	<li>Averager filter</li>
+	<li>References for the DVMs</li>
+	<li>Low battery detection</li>
+</ul>
+
+<p>The pressure sensor is a micro-machined silicon vacuum cell with a piezo-resistive sensing bridge on the diaphragm. Resistors R1 to R5 are SOTs for temperature compensation selected during temperature and pressure cycling. The offset at 1013mB atmospheric pressure, and the span from atmospheric to the equivalent of 20,000ft are temperature compensated. The bridge output is amplified and input to a lineariser circuit. Calibration of offset and span for the complete instrument is done at the lineariser input amplifier.</p>
+<p>Pressure is non-linear with altitude. The lineariser has three breakpoints which splits the pressure signal range into four segments, each segment being treated as linear. As each breakpoint is reached, the incremental gain is increased. Since the lineariser is all analog (made from diodes), the transition between segments is softened improving the conversion a little. The diodes in the lineariser circuit introduce some temperature error which is partially compensated for by the extra diodes in the segment references.</p>
+<p>The input signal to the lineariser is proportional to atmospheric pressure, the output is proportional to altitude. The linear altitude signal is passed to a DVM for display and also to the differentiator whose function is to find the rate of change of altitude ie vario climb rate. A very sensitive high gain analog differentiating circuit is used which requires the use of guard tracks and PCB surface coating to minimise susceptibility to zero drift from noisy surface conduction on the PCB. The resulting climb rate signal is displayed on a panel meter and is also passed to the audio circuit.</p>
+<p>A first order RC filter with a time constant of about 20 seconds integrates the vario signal for display on the averager DVM.</p>
+
+			</article>
+		</div>
+	</div>
+
+	<footer>Created in 2014 by <a href="http://tomchambers.me">Tom Chambers</a></footer>
+
+	<script src="//localhost:35729/livereload.js"></script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="./bower_components/fittext/fittext.js"></script>
+	<script src="./scripts/script.js"></script>
+</body>
+</html>
